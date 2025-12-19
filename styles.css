@@ -415,6 +415,8 @@ footer {
 
 .about-content {
     flex: 2;
+    min-width: 0;
+    /* Fix for Firefox flexbox overflow */
 }
 
 .about-content p {
