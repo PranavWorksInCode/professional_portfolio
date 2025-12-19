@@ -385,3 +385,203 @@ footer {
         display: block;
     }
 }
+
+/* Resume Page Styles */
+.resume-container {
+    max-width: 1000px;
+    margin: 80px auto 0;
+    /* Top margin for fixed header */
+    padding: 2rem 5%;
+}
+
+.resume-section {
+    margin-bottom: 4rem;
+}
+
+.resume-section h2 {
+    text-align: left;
+    border-bottom: 2px solid #333;
+    /* Separator line */
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* About Split */
+.about-split {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-content {
+    flex: 2;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.skill-card h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Achievements List */
+.achievements-list {
+    list-style-type: none;
+}
+
+.achievements-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.achievements-list li::before {
+    content: "\f091";
+    /* Trophy icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Work Experience Roadmap */
+.roadmap {
+    position: relative;
+    padding-left: 2rem;
+    margin-left: 1rem;
+    border-left: 4px solid var(--accent-color);
+    /* The vertical bar */
+}
+
+.roadmap-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.roadmap-marker {
+    position: absolute;
+    left: -2.6rem;
+    /* Align with the vertical bar */
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-color);
+    border: 4px solid var(--accent-color);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.roadmap-item:hover .roadmap-marker {
+    background-color: var(--accent-color);
+}
+
+.roadmap-content h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.roadmap-content h4 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.roadmap-date {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.roadmap-details {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #ccc;
+}
+
+.roadmap-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Download Button */
+.text-center {
+    text-align: center;
+}
+
+.download-btn {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+}
+
+/* Resume Responsive */
+@media (max-width: 768px) {
+    .about-split {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-image {
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .roadmap {
+        margin-left: 0.5rem;
+    }
+}
