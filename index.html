@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | CS Graduate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header>
+        <div class="logo"><a href="index.html">ρυ</a></div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="photos.html">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Hey, I'm Pranav Verma</h1>
+        <p>I am a Software Engineer with specializing in web development and application design. I am proficient in
+            JavaScript, C++, Java, Python and
+            PowerApps. I possess strong collaborator with a proven track record of delivering high-quality solutions.
+        </p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/bloxx.png" alt="Bloxxs Preview">
+                    <video muted loop playsinline>
+                        <source src="assets/bloxx_vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h3>Bloxxs</h3>
+                    <p> A 3D block placing game inspired from Tetris. The game is made using C++.</p>
+                    <div class="project-links">
+                        <a href="projectbloxxs.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/project-placeholder.png" alt="Dashboard Preview">
+                    <video muted loop playsinline>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h3>CK Cake Lounge</h3>
+                    <p>Official website for CK Cake Lounge that allows user to browse and order cakes online.
+                        Allows users to place custom orders and view the menu and book online consultation.
+                        Made using HTML, CSS, JavaScript, and Bootstrap.
+                    </p>
+                    <div class="project-links">
+                        <a href="projectckcake.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/project-placeholder.png" alt="App Preview">
+                    <video muted loop playsinline>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h3>AI-Powered Phishing and Malware Detector (Email Shield)</h3>
+                    <p>Email Shield is an AI-powered Secure Email Gateway that
+                        intercepts and blocks phishing and malware in real-time.
+                        It combines machine learning with heuristic analysis to filter
+                        threats and features an advanced analytics dashboard to visualize
+                        attack patterns, attacker origins, and high-risk targets for enterprise-grade
+                        security monitoring
+                    </p>
+                    <div class="project-links">
+                        <a href="projectemailshield.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="projects.html" class="btn">See All Projects</a>
+        </div>
+
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>
+                        I'm Pranav Verma, Dynamic Jr Developer Engineer with experience at the Ministry of Northern
+                        Development & Mines,
+                        specializing in web development and application design. Proficient in JavaScript, C++, Java,
+                        Python
+                        and PowerApps. I excel in
+                        creating immersive user experiences and streamlining reporting processes. I possess Strong
+                        collaborator with a proven track record of delivering high-quality solutions.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me playing squash, exploring new video games, or tinkering
+                        with new tech.
+                    </p>
+                </div>
+                <div class="image-stack" id="image-stack">
+                    <img src="Profiles/profile1.png" alt="Profile 1" class="stack-item">
+                    <img src="Profiles/profile2.jpg" alt="Profile 2" class="stack-item">
+                    <img src="Profiles/profile3.jpg" alt="Profile 3" class="stack-item">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get In Touch</h2>
+            <p>Interested in working together? Let's connect!</p>
+            <div class="contact-links">
+                <a href="mailto:pranav.verma20191@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/pranav-verma-20a303205" class="contact-icon"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Navsan1" class="contact-icon"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Pranav Verma. All rights reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

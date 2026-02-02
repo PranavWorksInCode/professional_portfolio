@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxxs | Pranav Verma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header>
+        <div class="logo"><a href="index.html">ρυ</a></div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="photos.html">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Header -->
+        <section class="project-header-section">
+            <div class="container">
+                <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                <h1>Bloxxs</h1>
+                <p class="project-subtitle">A 3D reimagining of the classic block-stacking puzzle game</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="glass-container">
+            <!-- Media Area -->
+            <div class="project-hero-media">
+                <video muted loop playsinline controls autoplay>
+                    <source src="assets/bloxx_vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="project-detail-grid">
+                <!-- Left Column: Details -->
+                <div class="detail-column">
+                    <h2>Overview</h2>
+                    <p class="detail-text">Bloxxs takes the timeless mechanics of Tetris and expands them into a
+                        three-dimensional challenge. Designed to test spatial awareness and quick thinking, players must
+                        maneuver falling 3D polyominos onto a grid board. The game features smooth C++ performance,
+                        real-time score tracking, and an escalating difficulty curve that keeps players engaged.</p>
+
+                    <h2>Technical Highlights</h2>
+                    <p class="detail-text">Built entirely in C++, Bloxxs demonstrates efficient memory management and
+                        game loop optimization. The rendering engine handles 3D perspective and collision detection in
+                        real-time without relying on heavy external game engines, showcasing pure programming
+                        fundamentals.</p>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <div class="sidebar-column">
+                    <div class="sidebar-box">
+                        <h3><i class="fas fa-microchip"></i> Tech Stack</h3>
+                        <div class="tech-stack-container">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">OpenGL</span>
+                            <span class="tech-tag">Game Design</span>
+                            <span class="tech-tag">Algorithms</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h3><i class="fas fa-star"></i> Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Fully 3D Gameplay Environment</li>
+                            <li>Custom Collision Detection</li>
+                            <li>High Score System</li>
+                            <li>Optimized Rendering Loop</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="assets/Bloxx.exe" download class="btn">Download Game <i
+                                class="fas fa-download"></i></a>
+                        <a href="#" class="btn secondary">View Source <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p class="subtitle-text">Interested in working together? Let's connect!</p>
+        <div class="contact-links">
+            <a href="mailto:pranav.verma20191@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/pranav-verma-20a303205" class="contact-icon"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Navsan1" class="contact-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pranav Verma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | Pranav Verma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header>
+        <div class="logo"><a href="index.html">ρυ</a></div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="photos.html">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Header -->
+        <section class="project-header-section">
+            <div class="container">
+                <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                <h1>Task Management App</h1>
+                <p class="project-subtitle">Cross-platform productivity tool for teams and individuals</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="glass-container">
+            <!-- Media Area -->
+            <div class="project-hero-media">
+                <img src="assets/project-placeholder.png" alt="Task Manager App Screens">
+            </div>
+
+            <div class="project-detail-grid">
+                <!-- Left Column: Details -->
+                <div class="detail-column">
+                    <h2>Overview</h2>
+                    <p class="detail-text">Built to solve the problem of fragmented workflows, this Task Management App
+                        allows users to organize personal to-dos and team projects in one unified interface. Leveraging
+                        Flutter's capabilities, it provides a silky-smooth 60fps experience on both iOS and Android from
+                        a single codebase.</p>
+
+                    <h2>Offline Capability</h2>
+                    <p class="detail-text">One of the standout features is its robust offline mode. Users can create,
+                        edit, and complete tasks without an internet connection. Changes are locally cached and
+                        automatically synchronized with the cloud once connectivity is restored, ensuring productivity
+                        is never interrupted.</p>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <div class="sidebar-column">
+                    <div class="sidebar-box">
+                        <h3><i class="fas fa-microchip"></i> Tech Stack</h3>
+                        <div class="tech-stack-container">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Cloud Firestore</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h3><i class="fas fa-star"></i> Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Real-time Push Notifications</li>
+                            <li>Offline Data Persistence</li>
+                            <li>Team Collaboration Support</li>
+                            <li>Dark/Light Mode Support</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="#" class="btn">View Code <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p class="subtitle-text">Interested in working together? Let's connect!</p>
+        <div class="contact-links">
+            <a href="mailto:pranav.verma20191@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/pranav-verma-20a303205" class="contact-icon"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Navsan1" class="contact-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pranav Verma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
