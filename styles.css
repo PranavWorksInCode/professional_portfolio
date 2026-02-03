@@ -697,10 +697,7 @@ footer {
 
 .skill-card i {
     font-size: 3rem;
-    background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
@@ -876,6 +873,31 @@ footer {
     padding: 1.2rem 3rem;
     font-size: 1.1rem;
     margin-top: 2rem;
+}
+
+/* Achievements List */
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.achievements-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #d1d5db;
+    font-size: 1rem;
+}
+
+.achievements-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    top: -3px;
 }
 
 @media (max-width: 900px) {
