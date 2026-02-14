@@ -229,11 +229,11 @@ h2 {
     z-index: 1;
 }
 
-.project-card:hover .project-img video {
+.project-card.has-video:hover .project-img video {
     opacity: 1;
 }
 
-.project-card:hover .project-img img {
+.project-card.has-video:hover .project-img img {
     opacity: 0;
 }
 

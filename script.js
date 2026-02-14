@@ -174,20 +174,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Project Video Playback
+    // Project Video Playback
     document.querySelectorAll('.project-card').forEach(card => {
         const video = card.querySelector('video');
         if (video) {
-            card.addEventListener('mouseenter', () => {
-                video.play().catch(error => {
-                    // Autoplay might be prevented or no source
-                    console.log("Video play failed:", error);
-                });
-            });
+            // Check if video has a valid source
+            const source = video.querySelector('source');
+            const src = source ? source.getAttribute('src') : video.getAttribute('src');
 
-            card.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
+            // Only enable video behavior if there is a valid source
+            if (src && src.trim() !== "") {
+                card.classList.add('has-video');
+
+                card.addEventListener('mouseenter', () => {
+                    video.play().catch(error => {
+                        // Autoplay might be prevented or no source
+                        console.log("Video play failed:", error);
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            } else {
+                // Hide video element if no source to prevent any potential display issues
+                video.style.display = 'none';
+            }
         }
     });
 });
