@@ -203,4 +203,95 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Project Card Image Slideshow Cycling
+    document.querySelectorAll('.project-slideshow').forEach(slideshow => {
+        const slides = slideshow.querySelectorAll('.slide-img');
+        const dots = slideshow.querySelectorAll('.dot');
+        if (slides.length <= 1) return;
+
+        let currentIndex = 0;
+
+        function goToSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+            currentIndex = (index + slides.length) % slides.length;
+
+            slides[currentIndex].classList.add('active');
+            if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+        }
+
+        let slideInterval = setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 2500);
+
+        slideshow.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 1800);
+        });
+
+        slideshow.addEventListener('mouseleave', () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 2500);
+        });
+    });
+
+    // Hero Media Carousel (Project Detail Page)
+    const heroCarousel = document.querySelector('.hero-carousel');
+    if (heroCarousel) {
+        const slides = heroCarousel.querySelectorAll('.hero-slide');
+        const dots = heroCarousel.querySelectorAll('.hero-dot');
+        const prevBtn = heroCarousel.querySelector('.prev-btn');
+        const nextBtn = heroCarousel.querySelector('.next-btn');
+        if (slides.length > 0) {
+            let currentIndex = 0;
+
+            function goToHeroSlide(index) {
+                slides[currentIndex].classList.remove('active');
+                if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+                currentIndex = (index + slides.length) % slides.length;
+
+                slides[currentIndex].classList.add('active');
+                if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    goToHeroSlide(currentIndex + 1);
+                    resetHeroTimer();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    goToHeroSlide(currentIndex - 1);
+                    resetHeroTimer();
+                });
+            }
+
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => {
+                    goToHeroSlide(idx);
+                    resetHeroTimer();
+                });
+            });
+
+            let heroTimer = setInterval(() => {
+                goToHeroSlide(currentIndex + 1);
+            }, 4000);
+
+            function resetHeroTimer() {
+                clearInterval(heroTimer);
+                heroTimer = setInterval(() => {
+                    goToHeroSlide(currentIndex + 1);
+                }, 4000);
+            }
+        }
+    }
 });
