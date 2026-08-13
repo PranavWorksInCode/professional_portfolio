@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Kubernetes Operator | Pranav Verma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header>
+        <div class="logo"><a href="index.html">ρυ</a></div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="photos.html">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Header -->
+        <section class="project-header-section">
+            <div class="container">
+                <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                <h1>Custom Go Kubernetes Operator</h1>
+                <p class="project-subtitle">Cloud-Native Multi-Tenant SaaS Infrastructure & Automation Platform</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="glass-container">
+            <!-- Media Area -->
+            <div class="project-hero-media">
+                <img src="assets/KuberTS/kuberts_preview.png" alt="Kubernetes Operator Architecture Diagram">
+            </div>
+
+            <div class="project-detail-grid">
+                <!-- Left Column: Details -->
+                <div class="detail-column">
+                    <h2>Overview</h2>
+                    <p class="detail-text">This project is an enterprise-grade <strong>Custom Kubernetes Operator</strong> written in <strong>Go (Golang)</strong> using <code>controller-runtime</code> and <code>kubebuilder</code>. The operator automates the complete multi-tenant SaaS lifecycle on Kubernetes—provisioning isolated namespaces, enforcing tier-based resource quotas, applying zero-trust network policies, and managing tenant workload deployments with dynamic TLS routing.</p>
+
+                    <h2>Architecture & Core Features</h2>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">1. Custom Resource Definition (`Tenant`)</h3>
+                    <p class="detail-text">Defined custom API specifications (<code>saas.infra.io/v1alpha1</code>) allowing SaaS admins to configure tenant attributes such as tier specifications (<code>basic</code>, <code>pro</code>, <code>enterprise</code>), domain routing, contact metadata, and replica counts.</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">2. Level-Triggered Idempotent Reconciliation</h3>
+                    <p class="detail-text">Engineered a robust event-driven controller reconciliation loop (<code>TenantReconciler</code>) that constantly ensures cluster state aligns with the desired custom resource specification. Handles state drifts automatically without duplicate operations.</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">3. Multi-Tenancy Security Hardening</h3>
+                    <p class="detail-text">Enforces strict isolation across tenants:</p>
+                    <ul class="detail-list" style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <li><strong>Namespace Isolation:</strong> Dynamically provisions dedicated <code>tenant-&lt;name&gt;</code> namespaces.</li>
+                        <li><strong>Zero-Trust NetworkPolicies:</strong> Blocks cross-tenant intra-cluster communication while allowing ingress only from authorized NGINX controllers.</li>
+                        <li><strong>Tier-Based ResourceQuotas:</strong> Caps CPU, Memory, and Pod allocations based on tenant tier.</li>
+                        <li><strong>LimitRanges:</strong> Enforces default container memory/CPU requests to prevent noisy-neighbor attacks.</li>
+                    </ul>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">4. Graceful Cleanup & Finalizers</h3>
+                    <p class="detail-text">Implemented Kubernetes finalizers (<code>saas.infra.io/tenant-finalizer</code>) to guarantee orderly teardown and zero resource leakage when tenant custom resources are deleted.</p>
+
+                    <h2>Technical Highlights</h2>
+                    <p class="detail-text">Built using idiomatic, thread-safe <strong>Go</strong> code following cloud-native best practices. Features OpenAPI v3 schema validation, <code>metav1.Condition</code> observability metrics, RBAC manifest generators, and automated local deployment via Kind/Minikube.</p>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <div class="sidebar-column">
+                    <div class="sidebar-box">
+                        <h3><i class="fas fa-microchip"></i> Tech Stack</h3>
+                        <div class="tech-stack-container">
+                            <span class="tech-tag">Go (Golang)</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Kubebuilder</span>
+                            <span class="tech-tag">controller-runtime</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">CRDs</span>
+                            <span class="tech-tag">YAML</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h3><i class="fas fa-star"></i> Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Custom Resource Definition (`Tenant`)</li>
+                            <li>Level-Triggered Reconciliation</li>
+                            <li>Zero-Trust Network Policies</li>
+                            <li>Tier-Based Resource Quotas</li>
+                            <li>Container LimitRanges</li>
+                            <li>Kubernetes Finalizers</li>
+                            <li>Observability & Conditions</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="https://github.com/PranavWorksInCode" class="btn">View Code <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p class="subtitle-text">Interested in working together? Let's connect!</p>
+        <div class="contact-links">
+            <a href="mailto:pranav.verma20191@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/pranav-verma-20a303205" class="contact-icon"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/PranavWorksInCode" class="contact-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pranav Verma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
