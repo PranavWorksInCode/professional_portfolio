@@ -67,23 +67,24 @@ header {
     z-index: 1000;
 }
 
-.logo {
+.logo,
+.logo a {
     font-size: 1.6rem;
-    font-weight: 800;
     font-weight: 800;
     color: var(--accent-color);
 }
 
-.menu-toggle {
-    display: none;
+.menu-toggle,
+.menu-toggle i {
+    color: var(--accent-color) !important;
     font-size: 1.5rem;
-    color: var(--accent-color);
     cursor: pointer;
     transition: color var(--transition-speed);
 }
 
-.menu-toggle:hover {
-    color: #fff;
+.menu-toggle:hover,
+.menu-toggle:hover i {
+    color: #fff !important;
 }
 
 nav ul {
