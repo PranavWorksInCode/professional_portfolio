@@ -7,7 +7,7 @@
     <title>Resume | Pranav Verma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
@@ -38,30 +38,21 @@
     <main class="resume-container">
         <h1>Resume</h1>
 
-        <!-- About Me Section -->
+        <!-- Download Button at Top & Bottom -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <a href="Documents/Pranav_Verma_Resume.pdf" download="Pranav_Verma_Resume.pdf" target="_blank" class="btn download-btn"><i
+                    class="fas fa-download"></i> Download Resume (PDF)</a>
+        </div>
+
+        <!-- About Me / Professional Summary -->
         <section class="resume-section about-split">
             <div class="about-content">
-                <h2>About Me</h2>
+                <h2>Professional Summary</h2>
                 <p>
-                    I am Pranav Verma, fresh graduate with a passion for web development and
-                    application design and game design.
-                    With a strong foundation in computer science and hands-on experience at the Ministry of Northern
-                    Development & Mines Ontario,
-                    I excel in creating immersive user experiences and streamlining complex processes.
-                    My expertise spans across JavaScript, C++, Java, Python, SQL, HTML, CSS, Git, and PowerApps.
-                    I am a strong collaborator committed to delivering high-quality, innovative technical solutions.
-                    I am also a quick learner and a team player.
+                    Google-certified Cybersecurity Professional and Honors CS graduate specializing in secure automation, cloud-native infrastructure, and full-stack development. Experience spans Go/Kubernetes platform engineering, ML-driven threat defense, and secure e-commerce and EdTech architectures. Proficient in Python, full-stack JavaScript/TypeScript, SQL, and CI/CD pipelines.
                 </p>
                 <p>
-                    Apart from my technical skills, I love to play squash and play video games. My favorite video games
-                    are
-                    "Titanfall 2","Far Cry Series","Resident Evil Series","Batman Arkham Series"and "Assasins Creed
-                    Series".
-                </p>
-                <p>
-                    I also have a thirst for knowledge and I love to learn new things. I love to research on any topic
-                    that
-                    I find interesting or any question that hits my mind as I carry my daily tasks
+                    When I'm not engineering cloud systems or coding, I enjoy playing squash, exploring gaming, and learning cutting-edge technical frameworks.
                 </p>
             </div>
             <div class="about-image">
@@ -71,40 +62,77 @@
 
         <!-- Skills Section -->
         <section class="resume-section">
-            <h2>Skills</h2>
+            <h2>Skills & Technologies</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-cuttlefish"></i>
-                    <h3>C++</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-java"></i>
-                    <h3>Java</h3>
+                    <i class="fab fa-golang" style="font-size: 2.5rem; color: #00ADD8;"></i>
+                    <h3>Go (Golang)</h3>
                 </div>
                 <div class="skill-card">
                     <i class="fab fa-python"></i>
                     <h3>Python</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>PowerApps</h3>
+                    <i class="fab fa-js"></i>
+                    <h3>TypeScript / JS</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5 & CSS3</h3>
+                    <i class="fab fa-docker"></i>
+                    <h3>Kubernetes & Docker</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-git-alt"></i>
-                    <h3>Git & Version Control</h3>
+                    <i class="fab fa-react"></i>
+                    <h3>Next.js & React</h3>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-database"></i>
-                    <h3>SQL</h3>
+                    <h3>Supabase / Postgres</h3>
                 </div>
+                <div class="skill-card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>SIEM / Cybersecurity</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Power BI & PowerApps</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience (Roadmap Style) -->
+        <section class="resume-section">
+            <h2>Work Experience</h2>
+            <div class="roadmap">
+
+                <!-- Experience 1 -->
+                <div class="roadmap-item">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>IT Consultant and Developer</h3>
+                        <h4>Hoshiarpur Automobiles — Hoshiarpur, Punjab, India</h4>
+                        <span class="roadmap-date">04/2026 – Present</span>
+                        <ul class="roadmap-details">
+                            <li>Led diagnosis and resolution of critical network bottlenecks between the sales floor and service bays during peak hours, reducing downtime by 35%.</li>
+                            <li>Consulted with management to streamline data compliance and security protocols, enhancing data protection and reducing security breaches by 40%.</li>
+                            <li>Implemented CI/CD pipelines, improving deployment efficiency and reducing release downtime.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="roadmap-item">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>Jr. Software Engineer (PEP)</h3>
+                        <h4>Energy and Mines | Énergie et des Mines — Guelph, Ontario, Canada</h4>
+                        <span class="roadmap-date">05/2022 – 08/2023</span>
+                        <ul class="roadmap-details">
+                            <li>Migrated fiscal platform to SharePoint Online, automating workflows and Power BI dashboards via Power Automate and Python, cutting manual processing time by 70%.</li>
+                            <li>Developed an award-winning business-technology mapping tool using Power Apps and Dataverse, earning 1st prize at the Ontario Public Services Hackathon, and built an AR web app showcased at the Foodland Ontario fair.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -113,32 +141,25 @@
             <h2>Education</h2>
             <div class="timeline-simple">
                 <div class="timeline-item">
-                    <h3>Bachelor of Computer Science</h3>
-                    <span class="timeline-date">2019 - 2024</span>
-                    <p>Wilfrid Laurier University</p>
-                    <p>Founding President of Artificial Intelligence Club</p>
-                    <p>Distinguished Member of Univesities COOP(internship) program</p>
-                    <p>Active member of Student Union.</p>
-
-                </div>
-                <div class="timeline-item">
-                    <h3>High/Senior Secondary School Diploma</h3>
-                    <span class="timeline-date">2015 - 2019</span>
-                    <p>Shah International School</p>
-                    <p>Clutural Ambassador from 2017-2018</p>
-                    <p>Natioanl Level Bronze Medalist in Speedball</p>
+                    <h3>Bachelor of Science in Computer Science (Hons.)</h3>
+                    <span class="timeline-date">09/2019 – 10/2024</span>
+                    <p><strong>Wilfrid Laurier University</strong> — Waterloo, Ontario, Canada</p>
+                    <ul class="roadmap-details" style="margin-top: 0.8rem;">
+                        <li>Graduated from a top-tier Canadian public (government) university; distinguished member of the university's Professional Experience Program (PEP), securing an internship at the Ministry of Northern Development and Mines/Energy and Mines.</li>
+                        <li>Founding President of the Artificial Intelligence Club, 2020–2022.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Certificates Section -->
         <section class="resume-section">
-            <h2>Certificates and Awards</h2>
+            <h2>Certificates & Credentials</h2>
             <div class="timeline-simple">
                 <!-- Google Cybersecurity Certificate -->
                 <div class="timeline-item">
                     <h3>Google Cybersecurity Professional Certificate</h3>
-                    <span class="timeline-date">2026</span>
+                    <span class="timeline-date">8-Course Specialization</span>
                     <p>Google Career Certificates</p>
                     <p style="width: 100%; margin-top: 0.5rem;"><a
                             href="Documents/Coursera%20MNVGREM3PD3G-Google%20Cybersecurity%20Certificate.pdf"
@@ -180,10 +201,11 @@
                                     class="fas fa-file-pdf"></i></a></li>
                     </ul>
                 </div>
+                <!-- Hackathon Award -->
                 <div class="timeline-item">
-                    <h3>1st position at 4th Annual Phenomenal OPS (Ontario Public Services) Microsoft Power Platform
-                        Hackathon</h3>
+                    <h3>1st Prize — Ontario Public Services (OPS) Hackathon</h3>
                     <span class="timeline-date">2023</span>
+                    <p>4th Annual Phenomenal OPS Microsoft Power Platform Hackathon for Synergy app (Business-Capability-Technology Mapping Tool).</p>
                     <p style="width: 100%; margin-top: 0.5rem;"><a href="Documents/microsoft%20certificate.pdf"
                             target="_blank" style="color: var(--accent-color); text-decoration: none;">View Certificate
                             <i class="fas fa-external-link-alt"></i></a></p>
@@ -191,62 +213,20 @@
             </div>
         </section>
 
-        <!-- Achievements Section -->
+        <!-- Featured Projects Overview -->
         <section class="resume-section">
-            <h2>Achievements</h2>
+            <h2>Recent Projects Summary</h2>
             <ul class="achievements-list">
-                <li>Developed "Bloxxs", a fully functional 3D 4D-Tetris variant using C++.</li>
-                <li>Streamlined reporting processes at Ministry of Northern Development & Mines.</li>
-                <li>Built comprehensive data analytics dashboards using Python and D3.js.</li>
-                <li>Won first prize at 4th Annual Phenomenal OPS (Ontario Public Services) Microsoft Power Platform
-                    Hackathon for building Synergy app which is a Business-Capability-Technology Mapping Tool</li>
+                <li><strong>Multi-Tenant Kubernetes Operator:</strong> Built custom Go operator with CRDs (`saas.infra.io/v1alpha1`), level-triggered reconciliation, zero-trust NetworkPolicies, and finalizers.</li>
+                <li><strong>Binding Knowledge:</strong> 4-role EdTech platform with Supabase RLS, Global Batch Manager, 7-digit Roll IDs, and one-click PDF grade/attendance exports.</li>
+                <li><strong>Email Shield:</strong> Multi-layered security gateway using ML (NLP) and heuristic analysis for real-time phishing and malware defense.</li>
+                <li><strong>NetSentinel:</strong> Full-stack network telemetry monitor featuring Python packet capture, process correlation (PIDs), and WebSockets.</li>
+                <li><strong>CK Cake Lounge:</strong> Secure e-commerce platform with automated takeout ordering, payment processing, and SQLi/XSS hardening.</li>
             </ul>
         </section>
 
-        <!-- Work Experience (Roadmap Style) -->
-        <section class="resume-section">
-            <h2>Work Experience</h2>
-            <div class="roadmap">
-
-                <!-- Experience Item 1 -->
-                <div class="roadmap-item">
-                    <div class="roadmap-marker"></div>
-                    <div class="roadmap-content">
-                        <h3>Junior Developer Engineer (Co-op)</h3>
-                        <h4>Ministry of Northern Development & Mines</h4>
-                        <span class="roadmap-date">May 2022 - August 2023</span>
-                        <ul class="roadmap-details">
-                            <li>Collaborated with cross-functional teams to design and implement web applications.</li>
-                            <li>Utilized PowerApps to modernize internal reporting tools, increasing efficiency.</li>
-                            <li>Maintained and debugged legacy codebases in Java and C++.</li>
-                            <li>Participated in agile development cycles and code reviews.</li>
-                            <li>Won first prize at 4th Annual Phenomenal OPS (Ontario Public Services) Microsoft Power
-                                Platform Hackathon for building Synergy app which is a Business-Capability-Technology
-                                Mapping Tool</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience Item 2 (Placeholder based on profile)-->
-                <div class="roadmap-item">
-                    <div class="roadmap-marker"></div>
-                    <div class="roadmap-content">
-                        <h3>Kitchen Staff</h3>
-                        <h4>McDonald's Waterloo</h4>
-                        <span class="roadmap-date">August 2021 - May 2022</span>
-                        <ul class="roadmap-details">
-                            <li>Assisted in kitchen operations and customer service/Hospitality.</li>
-                            <li>Learned and practiced time management and organization skills.</li>
-                            <li>Developed strong customer service skills and communication skills.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
         <section class="resume-section text-center">
-            <a href="Documents/PRANAV-VERMA-resumeB.pdf" target="_blank" class="btn download-btn"><i
+            <a href="Documents/Pranav_Verma_Resume.pdf" download="Pranav_Verma_Resume.pdf" target="_blank" class="btn download-btn"><i
                     class="fas fa-download"></i> Download Resume (PDF)</a>
         </section>
 
@@ -256,7 +236,7 @@
         <h2>Get In Touch</h2>
         <p>Interested in working together? Let's connect!</p>
         <div class="contact-links">
-            <a href="mailto:pranav.verma20191@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:pranavworksincode@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/pranav-verma-20a303205" class="contact-icon"><i
                     class="fab fa-linkedin"></i></a>
             <a href="https://github.com/PranavWorksInCode" class="contact-icon"><i class="fab fa-github"></i></a>
