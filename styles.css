@@ -77,8 +77,13 @@ header {
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--accent-color);
     cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.menu-toggle:hover {
+    color: #fff;
 }
 
 nav ul {
