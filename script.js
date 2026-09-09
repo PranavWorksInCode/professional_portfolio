@@ -294,4 +294,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // Photo Gallery Lightbox Modal
+    const photoItems = document.querySelectorAll('.photo-item img');
+    if (photoItems.length > 0) {
+        // Create lightbox elements
+        const modal = document.createElement('div');
+        modal.className = 'lightbox-modal';
+        modal.innerHTML = `
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" src="" alt="Enlarged photo preview">
+        `;
+        document.body.appendChild(modal);
+
+        const modalImg = modal.querySelector('.lightbox-content');
+        const closeBtn = modal.querySelector('.lightbox-close');
+
+        photoItems.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modalImg.alt = img.alt || 'Enlarged photo';
+                modal.classList.add('active');
+            });
+        });
+
+        const closeModal = () => modal.classList.remove('active');
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+        });
+    }
 });
