@@ -47,9 +47,22 @@
 
         <!-- Main Content -->
         <div class="glass-container">
-            <!-- Media Area -->
-            <div class="project-hero-media">
-                <img src="assets/PayPulse/paypulse_preview.png" alt="PayPulse AI Dashboard Interface">
+            <!-- Media Area Carousel -->
+            <div class="project-hero-media hero-carousel">
+                <button class="carousel-btn prev-btn" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                <img src="assets/PayPulse/paypulse_1.png" alt="PayPulse AI Executive KPIs & System Health" class="hero-slide active">
+                <img src="assets/PayPulse/paypulse_2.png" alt="PayPulse AI Live Transaction Stream Radar" class="hero-slide">
+                <img src="assets/PayPulse/paypulse_3.png" alt="PayPulse AI Conversational Financial Copilot" class="hero-slide">
+                <img src="assets/PayPulse/paypulse_4.png" alt="PayPulse AI Razorpay & UPI Payment Gateway Sandbox" class="hero-slide">
+                <img src="assets/PayPulse/paypulse_5.png" alt="PayPulse AI Sliding-Window Risk Rule Engine" class="hero-slide">
+                <button class="carousel-btn next-btn" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+                <div class="hero-dots">
+                    <span class="hero-dot active"></span>
+                    <span class="hero-dot"></span>
+                    <span class="hero-dot"></span>
+                    <span class="hero-dot"></span>
+                    <span class="hero-dot"></span>
+                </div>
             </div>
 
             <div class="project-detail-grid">
@@ -68,6 +81,9 @@
 
                     <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">3. 💳 Razorpay & UPI Payment Gateway Sandbox</h3>
                     <p class="detail-text">Interactive checkout simulator supporting GPay, PhonePe, Paytm UPI, HDFC Regalia Cards, and Simpl BNPL. Includes live threat vector injection toggles to simulate proxy IPs, high-velocity retry spikes, or night-time high-value transfers.</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">4. ⚙️ Sliding-Window Risk Rule Engine</h3>
+                    <p class="detail-text">Real-time Redis ZSET sliding-window rule evaluation (&lt; 2ms latency) enforcing custom anti-fraud policies including multi-device velocity spikes, impossible travel geo-jumps, and high-value off-hours transfers with instant 1-click policy toggle controls.</p>
 
                     <h2>Technical Highlights</h2>
                     <p class="detail-text">Built using <strong>React</strong>, <strong>Vite</strong>, <strong>Tailwind CSS</strong>, and GenAI LLM RAG pipelines. Designed with sub-15ms latency evaluation, sliding-window velocity rule engines, and interactive sandbox environments.</p>
@@ -95,6 +111,7 @@
                             <li>Live Fraud Threat Radar</li>
                             <li>AI Copilot RAG Assistant</li>
                             <li>Razorpay & UPI Sandbox</li>
+                            <li>Sliding-Window Rule Engine</li>
                             <li>Device Fingerprinting</li>
                         </ul>
                     </div>
