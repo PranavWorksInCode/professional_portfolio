@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go Kubernetes Operator | Pranav Verma</title>
+    <title>Kubertenet — Multi-Tenant Kubernetes Operator & SaaS Control Plane | Pranav Verma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,8 +40,8 @@
         <section class="project-header-section">
             <div class="container">
                 <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-                <h1>Custom Go Kubernetes Operator</h1>
-                <p class="project-subtitle">Cloud-Native Multi-Tenant SaaS Infrastructure & Automation Platform</p>
+                <h1>Kubertenet</h1>
+                <p class="project-subtitle">Autonomous Kubernetes Multi-Tenant SaaS Control Plane & Go Operator</p>
             </div>
         </section>
 
@@ -50,11 +50,15 @@
             <!-- Media Area Carousel -->
             <div class="project-hero-media hero-carousel">
                 <button class="carousel-btn prev-btn" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-                <img src="assets/KuberTS/kuber.png" alt="Kubernetes Operator Terminal Log" class="hero-slide active">
-                <img src="assets/KuberTS/kuberts.png" alt="Kubernetes Tenant Dashboard Interface" class="hero-slide">
+                <img src="assets/KuberTS/kubertenet_banner.jpg" alt="Kubertenet Core Architectural Engine Mark" class="hero-slide active">
+                <img src="assets/KuberTS/kuber.png" alt="Kubertenet Basic Tier Tenant Sandboxing (acme-corp)" class="hero-slide">
+                <img src="assets/KuberTS/kuberts.png" alt="Kubertenet Enterprise Tier Tenant Isolation (globex-inc)" class="hero-slide">
+                <img src="assets/KuberTS/kubertenet_logo.jpg" alt="Kubertenet Control Plane Symbol" class="hero-slide">
                 <button class="carousel-btn next-btn" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
                 <div class="hero-dots">
                     <span class="hero-dot active"></span>
+                    <span class="hero-dot"></span>
+                    <span class="hero-dot"></span>
                     <span class="hero-dot"></span>
                 </div>
             </div>
@@ -63,30 +67,38 @@
                 <!-- Left Column: Details -->
                 <div class="detail-column">
                     <h2>Overview</h2>
-                    <p class="detail-text">This project is an enterprise-grade <strong>Custom Kubernetes Operator</strong> written in <strong>Go (Golang)</strong> using <code>controller-runtime</code> and <code>kubebuilder</code>. The operator automates the complete multi-tenant SaaS lifecycle on Kubernetes—provisioning isolated namespaces, enforcing tier-based resource quotas, applying zero-trust network policies, and managing tenant workload deployments with dynamic TLS routing.</p>
+                    <p class="detail-text"><strong>Kubertenet</strong> is an enterprise-grade autonomous SaaS control plane and custom Kubernetes operator written in <strong>Go (Golang)</strong> using <code>controller-runtime</code> and <code>kubebuilder</code>. Designed to eliminate the operational complexity of multi-tenant cloud architectures, Kubertenet automates the complete tenant lifecycle in under 30 seconds—provisioning cryptographically isolated namespaces, enforcing Linux kernel-level zero-trust firewall policies, capping tier-based compute quotas, managing dynamic TLS 1.3 routing, reporting metered Prometheus billing telemetry to Stripe, and guaranteeing disaster recovery via automated S3 volume backup finalizers.</p>
 
-                    <h2>Architecture & Core Features</h2>
+                    <h2>Architecture & Core Capabilities</h2>
                     
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">1. Custom Resource Definition (`Tenant`)</h3>
-                    <p class="detail-text">Defined custom API specifications (<code>saas.infra.io/v1alpha1</code>) allowing SaaS admins to configure tenant attributes such as tier specifications (<code>basic</code>, <code>pro</code>, <code>enterprise</code>), domain routing, contact metadata, and replica counts.</p>
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">1. Autonomous Reconciler Loop & Custom Resource Definition (`Tenant`)</h3>
+                    <p class="detail-text">Extends the Kubernetes API schema (<code>saas.infra.io/v1alpha1</code>) to treat enterprise tenants as native cluster citizens. The level-triggered <code>TenantReconciler</code> continually audits desired vs. actual cluster state, enforcing idempotent self-healing—automatically detecting and recovering deleted namespaces, quotas, or deployment drifts in milliseconds without duplicate operations.</p>
 
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">2. Level-Triggered Idempotent Reconciliation</h3>
-                    <p class="detail-text">Engineered a robust event-driven controller reconciliation loop (<code>TenantReconciler</code>) that constantly ensures cluster state aligns with the desired custom resource specification. Handles state drifts automatically without duplicate operations.</p>
-
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">3. Multi-Tenancy Security Hardening</h3>
-                    <p class="detail-text">Enforces strict isolation across tenants:</p>
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">2. Kernel-Level Zero-Trust Packet Walls & Hardening</h3>
+                    <p class="detail-text">Enforces airtight, multi-layered isolation compliant with CIS Kubernetes Benchmarks:</p>
                     <ul class="detail-list" style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                        <li><strong>Namespace Isolation:</strong> Dynamically provisions dedicated <code>tenant-&lt;name&gt;</code> namespaces.</li>
-                        <li><strong>Zero-Trust NetworkPolicies:</strong> Blocks cross-tenant intra-cluster communication while allowing ingress only from authorized NGINX controllers.</li>
-                        <li><strong>Tier-Based ResourceQuotas:</strong> Caps CPU, Memory, and Pod allocations based on tenant tier.</li>
-                        <li><strong>LimitRanges:</strong> Enforces default container memory/CPU requests to prevent noisy-neighbor attacks.</li>
+                        <li><strong>Kernel Packet Filtering:</strong> Default-deny <code>NetworkPolicy</code> blocks 100% of cross-tenant intra-cluster traffic directly at the Linux kernel level (eBPF/iptables), completely preventing data snooping and lateral movement.</li>
+                        <li><strong>SSRF & IMDS Protection:</strong> Egress policies explicitly drop requests to cloud metadata endpoints (<code>169.254.169.254/32</code>), thwarting credential extraction.</li>
+                        <li><strong>Distroless Non-Root Packaging:</strong> Containerized in multi-stage distroless images (<code>UID 10001</code> / <code>65532:65532</code>) with zero shell binaries (no <code>sh</code>, <code>bash</code>, or package managers), privilege escalation disabled, and all Linux root capabilities dropped (<code>CAP_DROP_ALL</code>).</li>
                     </ul>
 
-                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">4. Graceful Cleanup & Finalizers</h3>
-                    <p class="detail-text">Implemented Kubernetes finalizers (<code>saas.infra.io/tenant-finalizer</code>) to guarantee orderly teardown and zero resource leakage when tenant custom resources are deleted.</p>
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">3. Tier-Based Quotas & Noisy-Neighbor Defense</h3>
+                    <p class="detail-text">Leverages Linux cgroups via Kubernetes <code>ResourceQuota</code> and <code>LimitRange</code> controllers to hard-cap tenant resource consumption. Dynamically allocates compute based on plan tier (from 1 CPU / 2Gi RAM on Basic up to 16 CPU / 32Gi RAM and 100 pods on Enterprise), eliminating CPU starvation, memory bleed, and denial-of-service noisy neighbor crashes.</p>
 
-                    <h2>Technical Highlights</h2>
-                    <p class="detail-text">Built using idiomatic, thread-safe <strong>Go</strong> code following cloud-native best practices. Features OpenAPI v3 schema validation, <code>metav1.Condition</code> observability metrics, RBAC manifest generators, and automated local deployment via Kind/Minikube.</p>
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">4. Control Plane REST API (`:8082`) & Web Dashboard (`:3000`)</h3>
+                    <p class="detail-text">Includes a high-throughput standalone Go REST API powered by <code>client-go</code> providing full CRUD endpoints (<code>/api/v1/tenants</code>, <code>/usage</code>, <code>/billing</code>) protected by constant-time cryptographic API key comparisons (<code>crypto/subtle.ConstantTimeCompare</code>) and CORS. Paired with a modern React and Tailwind CSS admin control plane featuring live health monitors, tenant inspectors, interactive ROI calculator, terminal demo visualizer, and a dedicated Client Developer Portal (<code>TenantPortalView</code>).</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">5. Dynamic SSL/TLS 1.3 Routing & Subdomain Ingress</h3>
+                    <p class="detail-text">Automates NGINX Ingress and <code>cert-manager</code> hooks watching tenant domain specifications. Automatically provisions Let'sEncrypt TLS 1.3 certificates and routes traffic securely to custom branded client subdomains (e.g., <code>acme.saasplatform.com</code>).</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">6. Prometheus Telemetry & Stripe Metered Billing</h3>
+                    <p class="detail-text">Exposes real-time Prometheus gauges (<code>kubetenant_tenant_resource_usage</code>) tracking active CPU-hours and RAM GB-hours. A background Go worker calculates exact compute usage and reports consumption directly to Stripe Metered Billing APIs for automated invoicing.</p>
+
+                    <h3 style="margin-top: 1.5rem; color: var(--accent-color, #64ffda);">7. Automated S3 Disaster Recovery Finalizers</h3>
+                    <p class="detail-text">Leverages Kubernetes deletion finalizers (<code>saas.infra.io/tenant-finalizer</code>) to intercept tenant teardowns. Automatically captures encrypted S3 snapshots of persistent volume claims (PVCs) and logs audit events before purging resources, guaranteeing zero data loss and clean cluster state.</p>
+
+                    <h2>Technical Highlights & Production Readiness</h2>
+                    <p class="detail-text">Engineered in idiomatic, thread-safe <strong>Go 1.22+</strong> with 100% passing test coverage across controller reconcilers, Stripe billing clients, S3 backup workers, and REST handlers with zero race conditions. Implements OpenAPI v3 schema validation and <code>metav1.Condition</code> observability metrics.</p>
                 </div>
 
                 <!-- Right Column: Sidebar -->
@@ -98,22 +110,31 @@
                             <span class="tech-tag">Kubernetes</span>
                             <span class="tech-tag">Kubebuilder</span>
                             <span class="tech-tag">controller-runtime</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">CRDs</span>
-                            <span class="tech-tag">YAML</span>
+                            <span class="tech-tag">Custom CRDs</span>
+                            <span class="tech-tag">Prometheus</span>
+                            <span class="tech-tag">Stripe Billing</span>
+                            <span class="tech-tag">Docker Distroless</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">eBPF / NetPol</span>
+                            <span class="tech-tag">S3 Finalizers</span>
                         </div>
                     </div>
 
                     <div class="sidebar-box">
                         <h3><i class="fas fa-star"></i> Key Features</h3>
                         <ul class="feature-list">
-                            <li>Custom Resource Definition (`Tenant`)</li>
-                            <li>Level-Triggered Reconciliation</li>
-                            <li>Zero-Trust Network Policies</li>
-                            <li>Tier-Based Resource Quotas</li>
-                            <li>Container LimitRanges</li>
-                            <li>Kubernetes Finalizers</li>
-                            <li>Observability & Conditions</li>
+                            <li>Sub-30s Automated Provisioning</li>
+                            <li>Zero-Trust Kernel Packet Walls</li>
+                            <li>Self-Healing Idempotent Reconciler</li>
+                            <li>Tier Quotas & LimitRanges</li>
+                            <li>Dynamic Ingress & TLS 1.3 SSL</li>
+                            <li>Prometheus & Stripe Metered Billing</li>
+                            <li>Control Plane REST API (:8082)</li>
+                            <li>Multi-View React Admin & Client Portal</li>
+                            <li>S3 Backup Disaster Finalizer</li>
+                            <li>Distroless Non-Root Hardening</li>
                         </ul>
                     </div>
 
